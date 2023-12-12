@@ -4,6 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+// Znaci da cim se napravi objekat ExamRegistrationController-a i inject-uje IExamRegistrationRepository, kreira se jedna instanca objekta klase ExamRegistrationRepository
+// Kada se radi sa konkretnom bazom, umesto AddSingleton treba koristiti AddScopped
 builder.Services.AddSingleton<IExamRegistrationRepository, ExamRegistrationRepository>();
 
 var app = builder.Build();
